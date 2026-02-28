@@ -138,8 +138,15 @@
   position: relative;
 }
 
+/* The component overlays use --tenant-color-heading for gradients.
+   Since heading is white on this dark template, force a dark scrim so text reads. */
+.template-lekkerweed #brand-story .bg-black\/15 {
+  background: rgba(0, 0, 0, 0.55);
+}
+
 .template-lekkerweed #brand-story .glass-panel,
 .template-lekkerweed #brand-story [class*="backdrop-blur"] {
+  background-color: rgba(0, 0, 0, 0.65) !important;
   border: 3px solid rgba(255, 255, 255, 0.3);
   box-shadow: var(--shadow-comic), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
@@ -166,14 +173,16 @@
   pointer-events: none;
 }
 
-/* Value prop cards — white on pink, comic borders */
+/* Value prop cards — white on pink, comic borders
+   Component uses inline style={backgroundColor: hsl(var(--tenant-color-background))}
+   so we must override the variable, not the property. */
 .template-lekkerweed #values .rounded-2xl,
 .template-lekkerweed #values .rounded-xl {
+  --tenant-color-background: 0 0% 100%;
   --tenant-color-heading: 280 55% 20%;
   --tenant-color-text: 280 30% 15%;
   border: 3px solid hsl(280, 55%, 20%);
   box-shadow: var(--shadow-comic);
-  background: hsl(0, 0%, 100%);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
