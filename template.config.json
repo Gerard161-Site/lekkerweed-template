@@ -1,0 +1,11 @@
+{
+  "id": "lekkerweed",
+  "slug": "lekkerweed",
+  "name": "LekkerWeed",
+  "description": "Pop-art comic book storefront with mascot Jade, bold halftone textures, starburst animations, and street-culture energy for a young recreational audience.",
+  "category": "street",
+  "tags": ["pop-art", "comic", "bold", "street-culture", "mascot", "recreational", "south-african", "fun", "colorful"],
+  "features": ["Pop-art comic book visual treatment with halftone textures", "Mascot-driven brand gallery with 9 Jade illustrations", "Color-cycling borders and starburst CSS animations", "Speech-bubble testimonial cards with comic shadows"],
+  "author": "BudStacks Platform",
+  "version": "1.0.0"
+}

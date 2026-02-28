@@ -1,0 +1,196 @@
+{
+  "template": "lekkerweed",
+  "slug": "lekkerweed",
+  "logoPath": null,
+  "heroImagePath": "assets/hero.jpg",
+  "heroVideoPath": null,
+  "primaryColor": "335 85% 55%",
+  "fontFamily": "'Archivo Black', 'Inter', system-ui, -apple-system, sans-serif",
+  "designSystem": {
+    "colors": {
+      "primary-scale": {
+        "50": "335 85% 96%",
+        "100": "335 80% 90%",
+        "200": "335 78% 80%",
+        "300": "335 80% 70%",
+        "400": "335 82% 62%",
+        "500": "335 85% 55%",
+        "600": "335 85% 45%",
+        "700": "335 85% 35%",
+        "800": "335 80% 25%",
+        "900": "335 75% 18%"
+      },
+      "primary": "335 85% 55%",
+      "secondary": "175 70% 42%",
+      "accent": "50 95% 55%",
+      "background": "45 30% 97%",
+      "surface": "335 15% 94%",
+      "text": "280 30% 15%",
+      "heading": "280 55% 25%",
+      "border": "280 12% 85%",
+      "success": "142 76% 36%",
+      "warning": "38 92% 50%",
+      "error": "0 72% 51%",
+      "info": "199 89% 48%"
+    },
+    "typography": {
+      "fontFamily": {
+        "heading": "'Archivo Black', 'Impact', 'Arial Black', sans-serif",
+        "body": "'Inter', system-ui, -apple-system, sans-serif"
+      },
+      "fontSize": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem"
+      },
+      "fontWeight": {
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "black": "900"
+      },
+      "lineHeight": {
+        "tight": "1.15",
+        "snug": "1.3",
+        "normal": "1.6",
+        "relaxed": "1.75"
+      },
+      "letterSpacing": {
+        "tight": "-0.02em",
+        "normal": "0",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
+      }
+    },
+    "shadows": {
+      "sm": "0 1px 2px rgba(60, 20, 80, 0.05)",
+      "md": "0 4px 6px -1px rgba(60, 20, 80, 0.07), 0 2px 4px -2px rgba(60, 20, 80, 0.05)",
+      "lg": "0 10px 15px -3px rgba(60, 20, 80, 0.08), 0 4px 6px -4px rgba(60, 20, 80, 0.04)",
+      "xl": "0 20px 25px -5px rgba(60, 20, 80, 0.1), 0 8px 10px -6px rgba(60, 20, 80, 0.06)",
+      "comic": "4px 4px 0px rgba(60, 20, 80, 0.9)",
+      "comic-sm": "2px 2px 0px rgba(60, 20, 80, 0.8)",
+      "comic-color": "4px 4px 0px hsl(335 85% 55%)",
+      "pop": "3px 3px 0px hsl(175 70% 42%), 6px 6px 0px hsl(50 95% 55%)"
+    },
+    "gradients": {
+      "primary": "linear-gradient(135deg, hsl(335, 85%, 55%), hsl(280, 55%, 35%))",
+      "secondary": "linear-gradient(135deg, hsl(175, 70%, 42%), hsl(175, 60%, 55%))",
+      "hero": "linear-gradient(135deg, hsl(50, 95%, 55%) 0%, hsl(335, 85%, 55%) 50%, hsl(280, 55%, 35%) 100%)",
+      "pop-art": "linear-gradient(135deg, hsl(335, 85%, 55%) 0%, hsl(280, 65%, 45%) 40%, hsl(175, 70%, 42%) 100%)",
+      "starburst": "conic-gradient(from 0deg, hsl(50, 95%, 55%), hsl(335, 85%, 55%), hsl(175, 70%, 42%), hsl(50, 95%, 55%))",
+      "cta": "linear-gradient(135deg, hsl(175, 70%, 42%), hsl(335, 85%, 55%))"
+    },
+    "spacing": {
+      "section": "5rem",
+      "container": "1.5rem",
+      "card": "2rem"
+    },
+    "borderRadius": {
+      "sm": "0.375rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "full": "9999px"
+    }
+  },
+  "valueProps": [
+    {
+      "icon": "leaf",
+      "title": "Quality Bud Only",
+      "description": "Every strain hand-picked and lab-tested. We don't do mid."
+    },
+    {
+      "icon": "users",
+      "title": "Built for the Sesh",
+      "description": "From braai to festival to chill house vibes — we're your session partner."
+    },
+    {
+      "icon": "zap",
+      "title": "No Pretension",
+      "description": "Skip the corporate cannabis energy. We keep it real, bold, and lekker."
+    },
+    {
+      "icon": "star",
+      "title": "Jade Approved",
+      "description": "If it doesn't pass Jade's vibe check, it doesn't make the menu."
+    }
+  ],
+  "pageContent": {
+    "homeHeroTitle": "Roll One. Light Up. Live Lekker.",
+    "homeHeroSubtitle": "Your sesh just got an upgrade.",
+    "homeHeroDescription": "Premium cannabis for people who know what lekker means. Bold strains, bolder vibes, and a mascot who never misses.",
+    "aboutMission": "LekkerWeed was born from a simple idea: weed should be fun. No pretension. No lab-coat energy. Just quality bud, good people, and the kind of moments you actually remember — or maybe don't. We're here for the session. The one where the playlist hits right, the smoke curls slow, and everyone's exactly where they want to be. That's the lekker life.",
+    "educationHotspots": [
+      {
+        "id": "spot1",
+        "targetSectionId": "hero",
+        "x": 75,
+        "y": 40,
+        "title": "Meet Jade",
+        "description": "Your guide to the lekker life. She's been rolling since before it was cool — and she's not stopping now."
+      },
+      {
+        "id": "spot2",
+        "targetSectionId": "showcase",
+        "x": 50,
+        "y": 30,
+        "title": "The Stash",
+        "description": "Hand-picked, lab-tested strains curated for every kind of session."
+      }
+    ]
+  },
+  "navigation": {
+    "links": [
+      { "label": "Conditions", "href": "/conditions" },
+      { "label": "The Stash", "href": "/products" },
+      { "label": "The Wire", "href": "/the-wire" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "cta": { "label": "Check Eligibility", "href": "/consultation" },
+    "cta2": { "label": "Patient Login", "href": "/login" },
+    "showCart": true
+  },
+  "footer": {
+    "tagline": "Roll one. Light up. Live lekker.",
+    "disclaimer": "LekkerWeed operates in compliance with all applicable cannabis regulations. Products are intended for legal use by qualified patients only. Must be 18+ with valid prescription.",
+    "sections": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/about" },
+          { "label": "The Stash", "href": "/products" },
+          { "label": "The Wire", "href": "/the-wire" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Patient Access", "href": "/consultation" },
+          { "label": "Conditions Treated", "href": "/conditions" },
+          { "label": "FAQ", "href": "/faq" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "/privacy" },
+          { "label": "Terms of Service", "href": "/terms" },
+          { "label": "Regulatory", "href": "/regulatory" }
+        ]
+      }
+    ]
+  }
+}

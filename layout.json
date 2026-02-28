@@ -1,0 +1,173 @@
+{
+  "version": "1.0.0",
+  "navigation": "NavMinimal",
+  "sections": [
+    {
+      "type": "HeroSplit",
+      "id": "hero",
+      "config": {
+        "contentPosition": "left",
+        "ctaText": "Shop the Stash",
+        "secondaryCtaText": "Meet Jade",
+        "secondaryCtaHref": "/about",
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "ImageShowcase",
+      "id": "brand-story",
+      "config": {
+        "heading": "Born for the Sesh",
+        "content": "LekkerWeed was born from a simple idea: weed should be fun. No pretension. No lab-coat energy. Just quality bud, good people, and the kind of moments you actually remember — or maybe don't.",
+        "imageUrl": "assets/comic-panel.png",
+        "overlayStyle": "glass",
+        "ctaText": "Our Story",
+        "ctaHref": "/about",
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "ValueProps",
+      "id": "values",
+      "config": {
+        "heading": "Why Roll With Us?",
+        "subtitle": "Good vibes. Great weed. No nonsense.",
+        "items": [
+          {
+            "icon": "leaf",
+            "title": "Quality Bud Only",
+            "description": "Every strain hand-picked and lab-tested. We don't do mid."
+          },
+          {
+            "icon": "users",
+            "title": "Built for the Sesh",
+            "description": "From braai to festival to chill house vibes — we're your session partner."
+          },
+          {
+            "icon": "zap",
+            "title": "No Pretension",
+            "description": "Skip the corporate cannabis energy. We keep it real, bold, and lekker."
+          },
+          {
+            "icon": "star",
+            "title": "Jade Approved",
+            "description": "If it doesn't pass Jade's vibe check, it doesn't make the menu."
+          }
+        ],
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "ProductShowcase",
+      "id": "showcase",
+      "config": {
+        "heading": "The Stash",
+        "subtitle": "Find your flavour. Every strain tells a story.",
+        "categories": [
+          {
+            "title": "Flower",
+            "description": "Premium hand-trimmed buds",
+            "href": "/products?category=flower"
+          },
+          {
+            "title": "Pre-Rolls",
+            "description": "Ready to light, ready to vibe",
+            "href": "/products?category=pre-rolls"
+          },
+          {
+            "title": "Edibles",
+            "description": "Taste the lekker life",
+            "href": "/products?category=edibles"
+          },
+          {
+            "title": "Concentrates",
+            "description": "For the connoisseurs",
+            "href": "/products?category=concentrates"
+          }
+        ],
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "Gallery",
+      "id": "gallery",
+      "config": {
+        "heading": "The Jade Universe",
+        "subtitle": "Pop art. Bold vibes. Your new favourite brand.",
+        "items": [
+          { "imageUrl": "assets/jade-main.jpg", "alt": "Jade — LekkerWeed mascot" },
+          { "imageUrl": "assets/jade-toke.png", "alt": "Jade — Toke" },
+          { "imageUrl": "assets/jade-blaze.jpg", "alt": "Jade — Blaze" },
+          { "imageUrl": "assets/brand-starburst.png", "alt": "LekkerWeed starburst" },
+          { "imageUrl": "assets/jade-sesh.png", "alt": "Jade — Sesh" },
+          { "imageUrl": "assets/jade-smoke.png", "alt": "Jade — Smoke" },
+          { "imageUrl": "assets/jade-vibes.png", "alt": "Jade — Vibes" },
+          { "imageUrl": "assets/jade-chill.jpg", "alt": "Jade — Chill" },
+          { "imageUrl": "assets/jade-style.jpg", "alt": "Jade — Style" },
+          { "imageUrl": "assets/jade-cool.jpg", "alt": "Jade — Cool" }
+        ],
+        "animation": "zoom-in"
+      }
+    },
+    {
+      "type": "Stats",
+      "id": "stats",
+      "config": {
+        "heading": "The Numbers Don't Lie",
+        "items": [
+          { "value": "50+", "label": "Premium Strains" },
+          { "value": "10K+", "label": "Happy Tokers" },
+          { "value": "100%", "label": "Lab Tested" },
+          { "value": "4.9", "label": "Average Rating" }
+        ],
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "Testimonials",
+      "id": "reviews",
+      "config": {
+        "heading": "What the People Say",
+        "subtitle": "Real reviews from real sessions.",
+        "items": [
+          {
+            "name": "Thabo M.",
+            "rating": 5,
+            "content": "Lekker is the only word for it. Best bud I've had in years. The vibe, the quality, the packaging — everything hits different.",
+            "role": "Regular Customer"
+          },
+          {
+            "name": "Zanele K.",
+            "rating": 5,
+            "content": "Jade knows what's up. Ordered for a house party and everyone was asking where I got it. LekkerWeed is now my go-to.",
+            "role": "Session Host"
+          },
+          {
+            "name": "Marcus D.",
+            "rating": 5,
+            "content": "No cap, the pre-rolls are fire. Clean burn, smooth draw, and the high is exactly right. These guys don't play.",
+            "role": "Connoisseur"
+          }
+        ],
+        "animation": "fade-up"
+      }
+    },
+    {
+      "type": "CTABanner",
+      "id": "cta",
+      "config": {
+        "heading": "Ready to Join the Sesh?",
+        "subtitle": "Roll one. Light up. Live lekker.",
+        "ctaText": "Shop Now",
+        "ctaHref": "/products",
+        "animation": "fade-up"
+      }
+    }
+  ],
+  "footer": "FooterSimple",
+  "settings": {
+    "wrapperClass": "template-lekkerweed",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&display=swap",
+    "sectionPadding": "2.5rem/3.5rem/4.5rem"
+  }
+}

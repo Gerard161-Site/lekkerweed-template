@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== LekkerWeed — Pop-Art Comic Template ===== */
+
+:root {
+  /* Core Palette */
+  --tenant-color-primary: 335 85% 55%;
+  --tenant-color-secondary: 175 70% 42%;
+  --tenant-color-accent: 50 95% 55%;
+  --tenant-color-background: 45 30% 97%;
+  --tenant-color-surface: 335 15% 94%;
+  --tenant-color-text: 280 30% 15%;
+  --tenant-color-heading: 280 55% 25%;
+  --tenant-color-border: 280 12% 85%;
+
+  /* Typography */
+  --tenant-font-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --tenant-font-heading: 'Archivo Black', 'Impact', 'Arial Black', sans-serif;
+
+  /* Comic Shadows */
+  --shadow-comic: 4px 4px 0px rgba(60, 20, 80, 0.85);
+  --shadow-comic-sm: 2px 2px 0px rgba(60, 20, 80, 0.75);
+  --shadow-comic-pink: 4px 4px 0px hsl(335, 85%, 50%);
+  --shadow-comic-teal: 4px 4px 0px hsl(175, 70%, 35%);
+  --shadow-comic-yellow: 4px 4px 0px hsl(50, 95%, 45%);
+  --shadow-pop: 3px 3px 0px hsl(335, 85%, 55%), 6px 6px 0px hsl(175, 70%, 42%);
+  --shadow-card: 0 2px 8px rgba(60, 20, 80, 0.06), 0 0 0 2px rgba(60, 20, 80, 0.04);
+  --shadow-elegant: 0 8px 24px -4px rgba(60, 20, 80, 0.1);
+
+  /* Blur tokens */
+  --tenant-blur-sm: 8px;
+  --tenant-blur-md: 16px;
+  --tenant-blur-lg: 24px;
+}
+
+/* ===== HALFTONE DOT PATTERN ===== */
+/* Subtle comic-book halftone texture on the page background */
+.template-lekkerweed {
+  background-color: hsl(45, 30%, 97%);
+  background-image:
+    radial-gradient(circle, hsl(335, 85%, 55%, 0.03) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* ===== HEADINGS — Comic Treatment ===== */
+.template-lekkerweed h1,
+.template-lekkerweed h2,
+.template-lekkerweed h3 {
+  font-family: var(--tenant-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+/* Heading emphasis — pop-art text shadow on large headings */
+.template-lekkerweed h1 {
+  text-shadow: 3px 3px 0px hsl(335, 85%, 80%), -1px -1px 0px hsl(175, 70%, 70%);
+}
+
+.template-lekkerweed h2 {
+  text-shadow: 2px 2px 0px hsl(335, 85%, 85%);
+}
+
+/* ===== HERO SPLIT ===== */
+.template-lekkerweed #hero {
+  background:
+    radial-gradient(circle at 20% 80%, hsl(50, 95%, 55%, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(335, 85%, 55%, 0.08) 0%, transparent 50%),
+    hsl(45, 30%, 97%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Starburst accent behind hero content */
+.template-lekkerweed #hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 140%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    hsl(50, 95%, 55%, 0.06) 0deg,
+    transparent 30deg,
+    hsl(335, 85%, 55%, 0.04) 60deg,
+    transparent 90deg,
+    hsl(50, 95%, 55%, 0.06) 120deg,
+    transparent 150deg,
+    hsl(335, 85%, 55%, 0.04) 180deg,
+    transparent 210deg,
+    hsl(50, 95%, 55%, 0.06) 240deg,
+    transparent 270deg,
+    hsl(335, 85%, 55%, 0.04) 300deg,
+    transparent 330deg,
+    hsl(50, 95%, 55%, 0.06) 360deg
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero image panel — comic border treatment */
+.template-lekkerweed #hero img {
+  border: 4px solid hsl(280, 55%, 25%);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-comic);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.template-lekkerweed #hero img:hover {
+  transform: scale(1.02) rotate(-1deg);
+  box-shadow: 6px 6px 0px hsl(335, 85%, 50%), 10px 10px 0px hsl(175, 70%, 42%);
+}
+
+/* ===== IMAGE SHOWCASE — Brand Story ===== */
+.template-lekkerweed #brand-story {
+  position: relative;
+}
+
+/* Glass overlay card on image showcase */
+.template-lekkerweed #brand-story .glass-panel,
+.template-lekkerweed #brand-story [class*="backdrop-blur"] {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-comic-sm), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ===== VALUE PROPS — Bold Cards ===== */
+.template-lekkerweed #values {
+  background:
+    radial-gradient(circle at 90% 10%, hsl(175, 70%, 42%, 0.06) 0%, transparent 40%),
+    hsl(335, 15%, 94%);
+}
+
+/* Comic-style value prop cards */
+.template-lekkerweed #values .rounded-2xl,
+.template-lekkerweed #values .rounded-xl {
+  border: 3px solid hsl(280, 55%, 25%);
+  box-shadow: var(--shadow-comic-sm);
+  background: hsl(45, 30%, 97%);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.template-lekkerweed #values .rounded-2xl::before,
+.template-lekkerweed #values .rounded-xl::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, hsl(335, 85%, 55%), hsl(175, 70%, 42%), hsl(50, 95%, 55%));
+}
+
+.template-lekkerweed #values .rounded-2xl:nth-child(1) { --card-accent: hsl(335, 85%, 55%); }
+.template-lekkerweed #values .rounded-2xl:nth-child(2) { --card-accent: hsl(175, 70%, 42%); }
+.template-lekkerweed #values .rounded-2xl:nth-child(3) { --card-accent: hsl(50, 95%, 55%); }
+.template-lekkerweed #values .rounded-2xl:nth-child(4) { --card-accent: hsl(280, 55%, 45%); }
+
+.template-lekkerweed #values .rounded-2xl:hover,
+.template-lekkerweed #values .rounded-xl:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: var(--shadow-comic-pink);
+}
+
+.template-lekkerweed #values .rounded-2xl:nth-child(even):hover,
+.template-lekkerweed #values .rounded-xl:nth-child(even):hover {
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow: var(--shadow-comic-teal);
+}
+
+/* Value prop icons — pop-art color ring */
+.template-lekkerweed #values [class*="rounded-full"] {
+  border: 3px solid hsl(280, 55%, 25%);
+  box-shadow: var(--shadow-comic-sm);
+}
+
+/* ===== PRODUCT SHOWCASE ===== */
+.template-lekkerweed #showcase {
+  background: hsl(45, 30%, 97%);
+}
+
+.template-lekkerweed #showcase .rounded-2xl,
+.template-lekkerweed #showcase .rounded-xl {
+  border: 3px solid hsl(280, 55%, 25%);
+  box-shadow: var(--shadow-comic-sm);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.template-lekkerweed #showcase .rounded-2xl:hover,
+.template-lekkerweed #showcase .rounded-xl:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-pop);
+}
+
+/* ===== GALLERY — Masonry Pop-Art ===== */
+.template-lekkerweed #gallery {
+  background:
+    radial-gradient(circle at 10% 90%, hsl(335, 85%, 55%, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, hsl(50, 95%, 55%, 0.05) 0%, transparent 40%),
+    hsl(335, 15%, 94%);
+}
+
+/* Gallery images — comic panel borders */
+.template-lekkerweed #gallery img {
+  border: 3px solid hsl(280, 55%, 25%);
+  box-shadow: var(--shadow-comic-sm);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.template-lekkerweed #gallery img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: var(--shadow-pop);
+  z-index: 10;
+  position: relative;
+}
+
+/* Alternating rotation on gallery items for dynamic feel */
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img {
+  transform: rotate(-1deg);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img {
+  transform: rotate(1deg);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+/* ===== STATS — Gradient Dark Section ===== */
+.template-lekkerweed #stats {
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 92%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halftone overlay on stats gradient */
+.template-lekkerweed #stats::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+  pointer-events: none;
+}
+
+/* Stats counter numbers — comic highlight */
+.template-lekkerweed #stats [class*="text-4xl"],
+.template-lekkerweed #stats [class*="text-5xl"],
+.template-lekkerweed #stats [class*="font-bold"] {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== TESTIMONIALS ===== */
+.template-lekkerweed #reviews {
+  background: hsl(45, 30%, 97%);
+}
+
+/* Testimonial cards — speech bubble style */
+.template-lekkerweed #reviews .rounded-2xl,
+.template-lekkerweed #reviews .rounded-xl {
+  border: 3px solid hsl(280, 55%, 25%);
+  box-shadow: var(--shadow-comic-sm);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Speech bubble tail */
+.template-lekkerweed #reviews .rounded-2xl::after,
+.template-lekkerweed #reviews .rounded-xl::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid hsl(280, 55%, 25%);
+}
+
+.template-lekkerweed #reviews .rounded-2xl:hover,
+.template-lekkerweed #reviews .rounded-xl:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: var(--shadow-comic-yellow);
+}
+
+/* Star ratings — yellow pop */
+.template-lekkerweed #reviews [class*="text-yellow"],
+.template-lekkerweed #reviews svg[fill] {
+  filter: drop-shadow(1px 1px 0px rgba(60, 20, 80, 0.3));
+}
+
+/* ===== CTA BANNER — Bold Gradient ===== */
+.template-lekkerweed #cta {
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 92%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Starburst pattern on CTA */
+.template-lekkerweed #cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    conic-gradient(
+      from 45deg at 80% 50%,
+      transparent 0deg,
+      rgba(255, 255, 255, 0.04) 15deg,
+      transparent 30deg,
+      rgba(255, 255, 255, 0.04) 45deg,
+      transparent 60deg
+    );
+  pointer-events: none;
+}
+
+/* Halftone on CTA */
+.template-lekkerweed #cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 10px 10px;
+  pointer-events: none;
+}
+
+/* ===== BUTTONS — Comic Style ===== */
+.template-lekkerweed a[class*="btn"],
+.template-lekkerweed button[class*="btn"],
+.template-lekkerweed [class*="rounded"][class*="bg-"] {
+  font-family: var(--tenant-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Primary buttons — bold comic treatment */
+.template-lekkerweed .btn-primary,
+.template-lekkerweed a[class*="bg-primary"],
+.template-lekkerweed button[class*="bg-primary"] {
+  border: 3px solid hsl(280, 55%, 20%);
+  box-shadow: var(--shadow-comic-sm);
+}
+
+.template-lekkerweed .btn-primary:hover,
+.template-lekkerweed a[class*="bg-primary"]:hover,
+.template-lekkerweed button[class*="bg-primary"]:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-comic);
+}
+
+.template-lekkerweed .btn-primary:active,
+.template-lekkerweed a[class*="bg-primary"]:active,
+.template-lekkerweed button[class*="bg-primary"]:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0px rgba(60, 20, 80, 0.5);
+}
+
+/* ===== FOOTER — Dark Comic Treatment ===== */
+.template-lekkerweed footer {
+  --tenant-color-surface: 280 40% 12%;
+  --tenant-color-background: 280 45% 8%;
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 280 15% 75%;
+  --tenant-color-border: 280 20% 22%;
+  background:
+    radial-gradient(circle at 20% 80%, hsl(335, 85%, 55%, 0.08) 0%, transparent 40%),
+    hsl(280, 45%, 8%);
+  position: relative;
+}
+
+/* Halftone dots on footer */
+.template-lekkerweed footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Footer links — pop color on hover */
+.template-lekkerweed footer a {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.template-lekkerweed footer a:hover {
+  color: hsl(335, 85%, 65%) !important;
+  text-shadow: 0 0 8px hsl(335, 85%, 55%, 0.4);
+}
+
+/* ===== NAV — Clean Minimal with Pop Accent ===== */
+.template-lekkerweed nav,
+.template-lekkerweed header {
+  border-bottom: 3px solid hsl(280, 55%, 25%);
+}
+
+.template-lekkerweed nav a:hover,
+.template-lekkerweed header a:hover {
+  color: hsl(335, 85%, 55%) !important;
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Pop-in animation for cards */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-4deg);
+  }
+  60% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Comic shake on hover */
+@keyframes comicShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+/* Starburst pulse */
+@keyframes starburstPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Floating smoke effect */
+@keyframes smokeFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translateY(-8px) rotate(2deg);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translateY(-4px) rotate(-1deg);
+    opacity: 0.6;
+  }
+}
+
+/* Color cycle for accents */
+@keyframes colorCycle {
+  0% { border-color: hsl(335, 85%, 55%); }
+  33% { border-color: hsl(175, 70%, 42%); }
+  66% { border-color: hsl(50, 95%, 55%); }
+  100% { border-color: hsl(335, 85%, 55%); }
+}
+
+/* Apply pop-in to gallery items */
+.template-lekkerweed #gallery [class*="overflow-hidden"] {
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(1) { animation-delay: 0.05s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(2) { animation-delay: 0.1s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3) { animation-delay: 0.15s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(4) { animation-delay: 0.2s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(5) { animation-delay: 0.25s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(6) { animation-delay: 0.3s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(7) { animation-delay: 0.35s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(8) { animation-delay: 0.4s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(9) { animation-delay: 0.45s; }
+
+/* Color-cycling border on hero image */
+.template-lekkerweed #hero img {
+  animation: colorCycle 6s ease-in-out infinite;
+}
+
+/* ===== SCROLLBAR — Branded ===== */
+.template-lekkerweed ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.template-lekkerweed ::-webkit-scrollbar-track {
+  background: hsl(280, 45%, 8%);
+}
+
+.template-lekkerweed ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(335, 85%, 55%), hsl(280, 55%, 35%));
+  border-radius: 5px;
+  border: 2px solid hsl(280, 45%, 8%);
+}
+
+.template-lekkerweed ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(335, 85%, 65%), hsl(280, 55%, 45%));
+}
+
+/* ===== SELECTION — Branded ===== */
+.template-lekkerweed ::selection {
+  background: hsl(335, 85%, 55%);
+  color: white;
+}
+
+/* ===== RESPONSIVE TWEAKS ===== */
+@media (max-width: 768px) {
+  .template-lekkerweed h1 {
+    text-shadow: 2px 2px 0px hsl(335, 85%, 80%);
+  }
+
+  .template-lekkerweed #hero img {
+    border-width: 3px;
+    box-shadow: var(--shadow-comic-sm);
+  }
+
+  .template-lekkerweed #values .rounded-2xl,
+  .template-lekkerweed #values .rounded-xl,
+  .template-lekkerweed #reviews .rounded-2xl,
+  .template-lekkerweed #reviews .rounded-xl {
+    border-width: 2px;
+    box-shadow: 2px 2px 0px rgba(60, 20, 80, 0.6);
+  }
+
+  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img,
+  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img {
+    transform: rotate(0deg);
+  }
+}
