@@ -198,43 +198,97 @@
   box-shadow: var(--shadow-pop);
 }
 
-/* ===== GALLERY — Masonry Pop-Art ===== */
+/* ===== GALLERY — Dark Pop-Art Section ===== */
 .template-lekkerweed #gallery {
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 90%;
   background:
-    radial-gradient(circle at 10% 90%, hsl(335, 85%, 55%, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, hsl(50, 95%, 55%, 0.05) 0%, transparent 40%),
-    hsl(335, 15%, 94%);
+    radial-gradient(circle at 10% 90%, hsl(335, 85%, 55%, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, hsl(175, 70%, 42%, 0.12) 0%, transparent 40%),
+    hsl(280, 45%, 10%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Gallery images — comic panel borders */
-.template-lekkerweed #gallery img {
-  border: 3px solid hsl(280, 55%, 25%);
+/* Halftone overlay on dark gallery bg */
+.template-lekkerweed #gallery::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+
+/* Gallery image containers — colored backdrops so white/transparent images pop */
+.template-lekkerweed #gallery [class*="overflow-hidden"] {
+  background: linear-gradient(135deg, hsl(280, 40%, 18%), hsl(280, 35%, 22%));
+  border: 3px solid hsl(280, 55%, 30%);
+  border-radius: 1rem;
   box-shadow: var(--shadow-comic-sm);
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Alternating colored backdrops per image */
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+1) {
+  background: linear-gradient(135deg, hsl(335, 60%, 18%), hsl(280, 45%, 15%));
+  border-color: hsl(335, 70%, 40%);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+2) {
+  background: linear-gradient(135deg, hsl(175, 50%, 15%), hsl(200, 40%, 12%));
+  border-color: hsl(175, 60%, 35%);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+3) {
+  background: linear-gradient(135deg, hsl(50, 50%, 18%), hsl(40, 40%, 14%));
+  border-color: hsl(50, 70%, 40%);
+}
+
+/* Gallery images — fill container, object-fit */
+.template-lekkerweed #gallery img {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+}
+
 .template-lekkerweed #gallery img:hover {
-  transform: scale(1.05) rotate(-2deg);
-  box-shadow: var(--shadow-pop);
+  transform: scale(1.08) rotate(-2deg);
   z-index: 10;
   position: relative;
 }
 
+/* Container hover — glow border */
+.template-lekkerweed #gallery [class*="overflow-hidden"]:hover {
+  box-shadow: 0 0 20px hsl(335, 85%, 55%, 0.4), var(--shadow-comic-pink);
+  border-color: hsl(335, 85%, 55%);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+2):hover {
+  box-shadow: 0 0 20px hsl(175, 70%, 42%, 0.4), var(--shadow-comic-teal);
+  border-color: hsl(175, 70%, 42%);
+}
+
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+3):hover {
+  box-shadow: 0 0 20px hsl(50, 95%, 55%, 0.4), var(--shadow-comic-yellow);
+  border-color: hsl(50, 95%, 55%);
+}
+
 /* Alternating rotation on gallery items for dynamic feel */
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img {
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) {
   transform: rotate(-1deg);
 }
 
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img {
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) {
   transform: rotate(1deg);
 }
 
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img:hover {
-  transform: scale(1.05) rotate(-3deg);
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd):hover {
+  transform: rotate(-2deg) scale(1.03);
 }
 
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img:hover {
-  transform: scale(1.05) rotate(3deg);
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even):hover {
+  transform: rotate(2deg) scale(1.03);
 }
 
 /* ===== STATS — Gradient Dark Section ===== */
@@ -537,8 +591,12 @@
     box-shadow: 2px 2px 0px rgba(60, 20, 80, 0.6);
   }
 
-  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) img,
-  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) img {
+  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd),
+  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) {
     transform: rotate(0deg);
+  }
+
+  .template-lekkerweed #gallery [class*="overflow-hidden"] {
+    border-width: 2px;
   }
 }
