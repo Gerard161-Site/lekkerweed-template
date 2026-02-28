@@ -5,31 +5,32 @@
 @tailwind utilities;
 
 /* ===== LekkerWeed — Pop-Art Comic Template ===== */
+/* Visual rhythm: DARK hero → IMAGE → BRIGHT values → LIGHT showcase → DARK gallery → DARK stats → LIGHT reviews → DARK cta → DARK footer */
 
 :root {
   /* Core Palette */
   --tenant-color-primary: 335 85% 55%;
   --tenant-color-secondary: 175 70% 42%;
   --tenant-color-accent: 50 95% 55%;
-  --tenant-color-background: 45 30% 97%;
-  --tenant-color-surface: 335 15% 94%;
-  --tenant-color-text: 280 30% 15%;
-  --tenant-color-heading: 280 55% 25%;
-  --tenant-color-border: 280 12% 85%;
+  --tenant-color-background: 280 45% 8%;
+  --tenant-color-surface: 280 35% 14%;
+  --tenant-color-text: 0 0% 92%;
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-border: 280 30% 25%;
 
   /* Typography */
   --tenant-font-base: 'Inter', system-ui, -apple-system, sans-serif;
   --tenant-font-heading: 'Archivo Black', 'Impact', 'Arial Black', sans-serif;
 
   /* Comic Shadows */
-  --shadow-comic: 4px 4px 0px rgba(60, 20, 80, 0.85);
-  --shadow-comic-sm: 2px 2px 0px rgba(60, 20, 80, 0.75);
+  --shadow-comic: 4px 4px 0px rgba(0, 0, 0, 0.85);
+  --shadow-comic-sm: 2px 2px 0px rgba(0, 0, 0, 0.7);
   --shadow-comic-pink: 4px 4px 0px hsl(335, 85%, 50%);
   --shadow-comic-teal: 4px 4px 0px hsl(175, 70%, 35%);
   --shadow-comic-yellow: 4px 4px 0px hsl(50, 95%, 45%);
   --shadow-pop: 3px 3px 0px hsl(335, 85%, 55%), 6px 6px 0px hsl(175, 70%, 42%);
-  --shadow-card: 0 2px 8px rgba(60, 20, 80, 0.06), 0 0 0 2px rgba(60, 20, 80, 0.04);
-  --shadow-elegant: 0 8px 24px -4px rgba(60, 20, 80, 0.1);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-elegant: 0 8px 24px -4px rgba(0, 0, 0, 0.2);
 
   /* Blur tokens */
   --tenant-blur-sm: 8px;
@@ -37,12 +38,11 @@
   --tenant-blur-lg: 24px;
 }
 
-/* ===== HALFTONE DOT PATTERN ===== */
-/* Subtle comic-book halftone texture on the page background */
+/* ===== PAGE BASE — Dark with halftone ===== */
 .template-lekkerweed {
-  background-color: hsl(45, 30%, 97%);
+  background-color: hsl(280, 45%, 8%);
   background-image:
-    radial-gradient(circle, hsl(335, 85%, 55%, 0.03) 1px, transparent 1px);
+    radial-gradient(circle, hsl(335, 85%, 55%, 0.04) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
@@ -56,21 +56,25 @@
   line-height: 1.1;
 }
 
-/* Heading emphasis — pop-art text shadow on large headings */
 .template-lekkerweed h1 {
-  text-shadow: 3px 3px 0px hsl(335, 85%, 80%), -1px -1px 0px hsl(175, 70%, 70%);
+  text-shadow: 3px 3px 0px hsl(335, 85%, 40%), -1px -1px 0px hsl(175, 70%, 30%);
 }
 
 .template-lekkerweed h2 {
-  text-shadow: 2px 2px 0px hsl(335, 85%, 85%);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== HERO SPLIT ===== */
+/* ===== HERO SPLIT — Dark Purple with Starburst ===== */
 .template-lekkerweed #hero {
+  --tenant-color-background: 280 50% 12%;
+  --tenant-color-surface: 280 40% 16%;
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 90%;
   background:
-    radial-gradient(circle at 20% 80%, hsl(50, 95%, 55%, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsl(335, 85%, 55%, 0.08) 0%, transparent 50%),
-    hsl(45, 30%, 97%);
+    radial-gradient(circle at 15% 85%, hsl(335, 85%, 55%, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, hsl(50, 95%, 55%, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, hsl(175, 70%, 42%, 0.08) 0%, transparent 60%),
+    hsl(280, 50%, 12%);
   overflow: hidden;
   position: relative;
 }
@@ -85,62 +89,91 @@
   height: 140%;
   background: conic-gradient(
     from 0deg at 50% 50%,
-    hsl(50, 95%, 55%, 0.06) 0deg,
+    hsl(50, 95%, 55%, 0.08) 0deg,
     transparent 30deg,
-    hsl(335, 85%, 55%, 0.04) 60deg,
+    hsl(335, 85%, 55%, 0.06) 60deg,
     transparent 90deg,
-    hsl(50, 95%, 55%, 0.06) 120deg,
+    hsl(50, 95%, 55%, 0.08) 120deg,
     transparent 150deg,
-    hsl(335, 85%, 55%, 0.04) 180deg,
+    hsl(335, 85%, 55%, 0.06) 180deg,
     transparent 210deg,
-    hsl(50, 95%, 55%, 0.06) 240deg,
+    hsl(50, 95%, 55%, 0.08) 240deg,
     transparent 270deg,
-    hsl(335, 85%, 55%, 0.04) 300deg,
+    hsl(335, 85%, 55%, 0.06) 300deg,
     transparent 330deg,
-    hsl(50, 95%, 55%, 0.06) 360deg
+    hsl(50, 95%, 55%, 0.08) 360deg
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* Hero image panel — comic border treatment */
+/* Halftone dots on hero */
+.template-lekkerweed #hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 12px 12px;
+  pointer-events: none;
+}
+
+/* Hero image — comic border, color-cycling */
 .template-lekkerweed #hero img {
-  border: 4px solid hsl(280, 55%, 25%);
+  border: 4px solid hsl(335, 85%, 55%);
   border-radius: 1rem;
-  box-shadow: var(--shadow-comic);
+  box-shadow: 6px 6px 0px hsl(175, 70%, 35%), 10px 10px 0px hsl(50, 95%, 45%);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  animation: colorCycle 6s ease-in-out infinite;
 }
 
 .template-lekkerweed #hero img:hover {
   transform: scale(1.02) rotate(-1deg);
-  box-shadow: 6px 6px 0px hsl(335, 85%, 50%), 10px 10px 0px hsl(175, 70%, 42%);
+  box-shadow: 8px 8px 0px hsl(335, 85%, 50%), 12px 12px 0px hsl(175, 70%, 42%);
 }
 
 /* ===== IMAGE SHOWCASE — Brand Story ===== */
 .template-lekkerweed #brand-story {
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 95%;
   position: relative;
 }
 
-/* Glass overlay card on image showcase */
 .template-lekkerweed #brand-story .glass-panel,
 .template-lekkerweed #brand-story [class*="backdrop-blur"] {
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: var(--shadow-comic-sm), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-comic), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* ===== VALUE PROPS — Bold Cards ===== */
+/* ===== VALUE PROPS — Hot Pink Section ===== */
 .template-lekkerweed #values {
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 95%;
   background:
-    radial-gradient(circle at 90% 10%, hsl(175, 70%, 42%, 0.06) 0%, transparent 40%),
-    hsl(335, 15%, 94%);
+    radial-gradient(circle at 90% 10%, hsl(50, 95%, 55%, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 10% 90%, hsl(280, 55%, 40%, 0.2) 0%, transparent 40%),
+    hsl(335, 75%, 48%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Comic-style value prop cards */
+/* Halftone on values */
+.template-lekkerweed #values::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+
+/* Value prop cards — white on pink, comic borders */
 .template-lekkerweed #values .rounded-2xl,
 .template-lekkerweed #values .rounded-xl {
-  border: 3px solid hsl(280, 55%, 25%);
-  box-shadow: var(--shadow-comic-sm);
-  background: hsl(45, 30%, 97%);
+  --tenant-color-heading: 280 55% 20%;
+  --tenant-color-text: 280 30% 15%;
+  border: 3px solid hsl(280, 55%, 20%);
+  box-shadow: var(--shadow-comic);
+  background: hsl(0, 0%, 100%);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
@@ -153,42 +186,57 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, hsl(335, 85%, 55%), hsl(175, 70%, 42%), hsl(50, 95%, 55%));
+  height: 5px;
+  background: linear-gradient(90deg, hsl(50, 95%, 55%), hsl(175, 70%, 42%), hsl(335, 85%, 55%));
 }
-
-.template-lekkerweed #values .rounded-2xl:nth-child(1) { --card-accent: hsl(335, 85%, 55%); }
-.template-lekkerweed #values .rounded-2xl:nth-child(2) { --card-accent: hsl(175, 70%, 42%); }
-.template-lekkerweed #values .rounded-2xl:nth-child(3) { --card-accent: hsl(50, 95%, 55%); }
-.template-lekkerweed #values .rounded-2xl:nth-child(4) { --card-accent: hsl(280, 55%, 45%); }
 
 .template-lekkerweed #values .rounded-2xl:hover,
 .template-lekkerweed #values .rounded-xl:hover {
   transform: translateY(-6px) rotate(-1deg);
   box-shadow: var(--shadow-comic-pink);
+  border-color: hsl(335, 85%, 50%);
 }
 
 .template-lekkerweed #values .rounded-2xl:nth-child(even):hover,
 .template-lekkerweed #values .rounded-xl:nth-child(even):hover {
   transform: translateY(-6px) rotate(1deg);
   box-shadow: var(--shadow-comic-teal);
+  border-color: hsl(175, 70%, 35%);
 }
 
-/* Value prop icons — pop-art color ring */
+/* Value prop icons */
 .template-lekkerweed #values [class*="rounded-full"] {
-  border: 3px solid hsl(280, 55%, 25%);
+  border: 3px solid hsl(280, 55%, 20%);
   box-shadow: var(--shadow-comic-sm);
 }
 
-/* ===== PRODUCT SHOWCASE ===== */
+/* ===== PRODUCT SHOWCASE — Dark Teal Section ===== */
 .template-lekkerweed #showcase {
-  background: hsl(45, 30%, 97%);
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 90%;
+  background:
+    radial-gradient(circle at 80% 20%, hsl(335, 85%, 55%, 0.1) 0%, transparent 40%),
+    hsl(175, 55%, 14%);
+  position: relative;
+}
+
+/* Halftone on showcase */
+.template-lekkerweed #showcase::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, hsl(175, 70%, 42%, 0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
 }
 
 .template-lekkerweed #showcase .rounded-2xl,
 .template-lekkerweed #showcase .rounded-xl {
-  border: 3px solid hsl(280, 55%, 25%);
+  --tenant-color-heading: 0 0% 100%;
+  --tenant-color-text: 0 0% 90%;
+  border: 3px solid hsl(175, 60%, 30%);
   box-shadow: var(--shadow-comic-sm);
+  background: hsl(175, 40%, 18%);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -196,100 +244,64 @@
 .template-lekkerweed #showcase .rounded-xl:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-pop);
+  border-color: hsl(335, 85%, 55%);
+  background: hsl(175, 40%, 22%);
 }
 
-/* ===== GALLERY — Dark Pop-Art Section ===== */
+/* ===== GALLERY — Deep Purple, Images Front and Center ===== */
 .template-lekkerweed #gallery {
   --tenant-color-heading: 0 0% 100%;
   --tenant-color-text: 0 0% 90%;
   background:
-    radial-gradient(circle at 10% 90%, hsl(335, 85%, 55%, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, hsl(175, 70%, 42%, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, hsl(335, 85%, 55%, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, hsl(50, 95%, 55%, 0.08) 0%, transparent 40%),
     hsl(280, 45%, 10%);
   position: relative;
   overflow: hidden;
 }
 
-/* Halftone overlay on dark gallery bg */
+/* Halftone on gallery */
 .template-lekkerweed #gallery::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.04) 1px, transparent 1px);
   background-size: 14px 14px;
   pointer-events: none;
+  z-index: 0;
 }
 
-/* Gallery image containers — colored backdrops so white/transparent images pop */
-.template-lekkerweed #gallery [class*="overflow-hidden"] {
-  background: linear-gradient(135deg, hsl(280, 40%, 18%), hsl(280, 35%, 22%));
-  border: 3px solid hsl(280, 55%, 30%);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-comic-sm);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Alternating colored backdrops per image */
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+1) {
-  background: linear-gradient(135deg, hsl(335, 60%, 18%), hsl(280, 45%, 15%));
-  border-color: hsl(335, 70%, 40%);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+2) {
-  background: linear-gradient(135deg, hsl(175, 50%, 15%), hsl(200, 40%, 12%));
-  border-color: hsl(175, 60%, 35%);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+3) {
-  background: linear-gradient(135deg, hsl(50, 50%, 18%), hsl(40, 40%, 14%));
-  border-color: hsl(50, 70%, 40%);
-}
-
-/* Gallery images — fill container, object-fit */
+/* Gallery images — simple comic borders, let the art speak */
 .template-lekkerweed #gallery img {
+  border: 3px solid hsl(335, 85%, 55%);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-comic);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  border: none;
+  position: relative;
+  z-index: 1;
 }
 
 .template-lekkerweed #gallery img:hover {
-  transform: scale(1.08) rotate(-2deg);
-  z-index: 10;
-  position: relative;
-}
-
-/* Container hover — glow border */
-.template-lekkerweed #gallery [class*="overflow-hidden"]:hover {
-  box-shadow: 0 0 20px hsl(335, 85%, 55%, 0.4), var(--shadow-comic-pink);
-  border-color: hsl(335, 85%, 55%);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+2):hover {
-  box-shadow: 0 0 20px hsl(175, 70%, 42%, 0.4), var(--shadow-comic-teal);
-  border-color: hsl(175, 70%, 42%);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3n+3):hover {
-  box-shadow: 0 0 20px hsl(50, 95%, 55%, 0.4), var(--shadow-comic-yellow);
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 0 20px hsl(335, 85%, 55%, 0.5), var(--shadow-comic-pink);
   border-color: hsl(50, 95%, 55%);
+  z-index: 10;
 }
 
-/* Alternating rotation on gallery items for dynamic feel */
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd) {
-  transform: rotate(-1deg);
+/* Staggered pop-in */
+.template-lekkerweed #gallery [class*="overflow-hidden"] {
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) {
-  transform: rotate(1deg);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd):hover {
-  transform: rotate(-2deg) scale(1.03);
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even):hover {
-  transform: rotate(2deg) scale(1.03);
-}
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(1) { animation-delay: 0.05s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(2) { animation-delay: 0.1s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3) { animation-delay: 0.15s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(4) { animation-delay: 0.2s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(5) { animation-delay: 0.25s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(6) { animation-delay: 0.3s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(7) { animation-delay: 0.35s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(8) { animation-delay: 0.4s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(9) { animation-delay: 0.45s; }
+.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(10) { animation-delay: 0.5s; }
 
 /* ===== STATS — Gradient Dark Section ===== */
 .template-lekkerweed #stats {
@@ -299,7 +311,6 @@
   overflow: hidden;
 }
 
-/* Halftone overlay on stats gradient */
 .template-lekkerweed #stats::after {
   content: '';
   position: absolute;
@@ -309,23 +320,31 @@
   pointer-events: none;
 }
 
-/* Stats counter numbers — comic highlight */
 .template-lekkerweed #stats [class*="text-4xl"],
 .template-lekkerweed #stats [class*="text-5xl"],
 .template-lekkerweed #stats [class*="font-bold"] {
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== TESTIMONIALS ===== */
+/* ===== TESTIMONIALS — Yellow Accent Light Section (breathing room) ===== */
 .template-lekkerweed #reviews {
-  background: hsl(45, 30%, 97%);
+  --tenant-color-heading: 280 55% 20%;
+  --tenant-color-text: 280 30% 15%;
+  --tenant-color-background: 50 80% 92%;
+  --tenant-color-surface: 50 60% 88%;
+  background:
+    radial-gradient(circle at 10% 10%, hsl(335, 85%, 55%, 0.06) 0%, transparent 40%),
+    hsl(50, 80%, 92%);
 }
 
-/* Testimonial cards — speech bubble style */
+/* Testimonial cards — speech bubble on warm yellow bg */
 .template-lekkerweed #reviews .rounded-2xl,
 .template-lekkerweed #reviews .rounded-xl {
-  border: 3px solid hsl(280, 55%, 25%);
-  box-shadow: var(--shadow-comic-sm);
+  --tenant-color-heading: 280 55% 20%;
+  --tenant-color-text: 280 30% 15%;
+  border: 3px solid hsl(280, 55%, 20%);
+  box-shadow: var(--shadow-comic);
+  background: hsl(0, 0%, 100%);
   position: relative;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -341,7 +360,7 @@
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid hsl(280, 55%, 25%);
+  border-top: 12px solid hsl(280, 55%, 20%);
 }
 
 .template-lekkerweed #reviews .rounded-2xl:hover,
@@ -350,7 +369,6 @@
   box-shadow: var(--shadow-comic-yellow);
 }
 
-/* Star ratings — yellow pop */
 .template-lekkerweed #reviews [class*="text-yellow"],
 .template-lekkerweed #reviews svg[fill] {
   filter: drop-shadow(1px 1px 0px rgba(60, 20, 80, 0.3));
@@ -364,7 +382,6 @@
   overflow: hidden;
 }
 
-/* Starburst pattern on CTA */
 .template-lekkerweed #cta::before {
   content: '';
   position: absolute;
@@ -381,7 +398,6 @@
   pointer-events: none;
 }
 
-/* Halftone on CTA */
 .template-lekkerweed #cta::after {
   content: '';
   position: absolute;
@@ -393,19 +409,17 @@
 
 /* ===== BUTTONS — Comic Style ===== */
 .template-lekkerweed a[class*="btn"],
-.template-lekkerweed button[class*="btn"],
-.template-lekkerweed [class*="rounded"][class*="bg-"] {
+.template-lekkerweed button[class*="btn"] {
   font-family: var(--tenant-font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Primary buttons — bold comic treatment */
 .template-lekkerweed .btn-primary,
 .template-lekkerweed a[class*="bg-primary"],
 .template-lekkerweed button[class*="bg-primary"] {
-  border: 3px solid hsl(280, 55%, 20%);
+  border: 3px solid rgba(0, 0, 0, 0.3);
   box-shadow: var(--shadow-comic-sm);
 }
 
@@ -420,33 +434,31 @@
 .template-lekkerweed a[class*="bg-primary"]:active,
 .template-lekkerweed button[class*="bg-primary"]:active {
   transform: translateY(1px);
-  box-shadow: 1px 1px 0px rgba(60, 20, 80, 0.5);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== FOOTER — Dark Comic Treatment ===== */
 .template-lekkerweed footer {
-  --tenant-color-surface: 280 40% 12%;
-  --tenant-color-background: 280 45% 8%;
+  --tenant-color-surface: 280 40% 10%;
+  --tenant-color-background: 280 50% 6%;
   --tenant-color-heading: 0 0% 100%;
-  --tenant-color-text: 280 15% 75%;
-  --tenant-color-border: 280 20% 22%;
+  --tenant-color-text: 280 15% 70%;
+  --tenant-color-border: 280 20% 18%;
   background:
     radial-gradient(circle at 20% 80%, hsl(335, 85%, 55%, 0.08) 0%, transparent 40%),
-    hsl(280, 45%, 8%);
+    hsl(280, 50%, 6%);
   position: relative;
 }
 
-/* Halftone dots on footer */
 .template-lekkerweed footer::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(circle, hsl(335, 85%, 55%, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
   pointer-events: none;
 }
 
-/* Footer links — pop color on hover */
 .template-lekkerweed footer a {
   transition: color 0.2s ease, text-shadow 0.2s ease;
 }
@@ -456,10 +468,10 @@
   text-shadow: 0 0 8px hsl(335, 85%, 55%, 0.4);
 }
 
-/* ===== NAV — Clean Minimal with Pop Accent ===== */
+/* ===== NAV — Dark with Comic Accent ===== */
 .template-lekkerweed nav,
 .template-lekkerweed header {
-  border-bottom: 3px solid hsl(280, 55%, 25%);
+  border-bottom: 3px solid hsl(335, 85%, 55%);
 }
 
 .template-lekkerweed nav a:hover,
@@ -469,7 +481,6 @@
 
 /* ===== ANIMATIONS ===== */
 
-/* Pop-in animation for cards */
 @keyframes popIn {
   0% {
     opacity: 0;
@@ -484,42 +495,6 @@
   }
 }
 
-/* Comic shake on hover */
-@keyframes comicShake {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-2deg); }
-  75% { transform: rotate(2deg); }
-}
-
-/* Starburst pulse */
-@keyframes starburstPulse {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
-
-/* Floating smoke effect */
-@keyframes smokeFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.5;
-  }
-  33% {
-    transform: translateY(-8px) rotate(2deg);
-    opacity: 0.7;
-  }
-  66% {
-    transform: translateY(-4px) rotate(-1deg);
-    opacity: 0.6;
-  }
-}
-
-/* Color cycle for accents */
 @keyframes colorCycle {
   0% { border-color: hsl(335, 85%, 55%); }
   33% { border-color: hsl(175, 70%, 42%); }
@@ -527,24 +502,10 @@
   100% { border-color: hsl(335, 85%, 55%); }
 }
 
-/* Apply pop-in to gallery items */
-.template-lekkerweed #gallery [class*="overflow-hidden"] {
-  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(1) { animation-delay: 0.05s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(2) { animation-delay: 0.1s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(3) { animation-delay: 0.15s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(4) { animation-delay: 0.2s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(5) { animation-delay: 0.25s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(6) { animation-delay: 0.3s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(7) { animation-delay: 0.35s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(8) { animation-delay: 0.4s; }
-.template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(9) { animation-delay: 0.45s; }
-
-/* Color-cycling border on hero image */
-.template-lekkerweed #hero img {
-  animation: colorCycle 6s ease-in-out infinite;
+@keyframes comicShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
 }
 
 /* ===== SCROLLBAR — Branded ===== */
@@ -553,13 +514,13 @@
 }
 
 .template-lekkerweed ::-webkit-scrollbar-track {
-  background: hsl(280, 45%, 8%);
+  background: hsl(280, 50%, 6%);
 }
 
 .template-lekkerweed ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, hsl(335, 85%, 55%), hsl(280, 55%, 35%));
   border-radius: 5px;
-  border: 2px solid hsl(280, 45%, 8%);
+  border: 2px solid hsl(280, 50%, 6%);
 }
 
 .template-lekkerweed ::-webkit-scrollbar-thumb:hover {
@@ -572,15 +533,15 @@
   color: white;
 }
 
-/* ===== RESPONSIVE TWEAKS ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .template-lekkerweed h1 {
-    text-shadow: 2px 2px 0px hsl(335, 85%, 80%);
+    text-shadow: 2px 2px 0px hsl(335, 85%, 40%);
   }
 
   .template-lekkerweed #hero img {
     border-width: 3px;
-    box-shadow: var(--shadow-comic-sm);
+    box-shadow: 4px 4px 0px hsl(175, 70%, 35%);
   }
 
   .template-lekkerweed #values .rounded-2xl,
@@ -588,15 +549,11 @@
   .template-lekkerweed #reviews .rounded-2xl,
   .template-lekkerweed #reviews .rounded-xl {
     border-width: 2px;
-    box-shadow: 2px 2px 0px rgba(60, 20, 80, 0.6);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6);
   }
 
-  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(odd),
-  .template-lekkerweed #gallery [class*="overflow-hidden"]:nth-child(even) {
-    transform: rotate(0deg);
-  }
-
-  .template-lekkerweed #gallery [class*="overflow-hidden"] {
+  .template-lekkerweed #gallery img {
     border-width: 2px;
+    box-shadow: var(--shadow-comic-sm);
   }
 }
